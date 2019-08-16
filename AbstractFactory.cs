@@ -6,6 +6,7 @@ namespace AbstractFactory
         IMacFactory GetMacGui();
         IMobileFactory GetMobileGui();
     }
+    // Added a new Web GUI buttons without changing the existing code
     public interface IGUIFactory1 : IGUIFactory
     {
         IWebFactory GetWebGui();
@@ -18,6 +19,7 @@ namespace AbstractFactory
     public interface IWinFactory: IAbstractFactory { }
     public interface IMacFactory: IAbstractFactory { }
     public interface IMobileFactory: IAbstractFactory { }
+    // Added a new Web GUI buttons without changing the existing code
     public interface IWebFactory : IAbstractFactory { }
     public class ConcreteFactory : IGUIFactory
     {
@@ -36,6 +38,7 @@ namespace AbstractFactory
             return new Win();
         }
     }
+    // Added a new concrete class for new Web GUI
     public class ConcreteFactory1 : ConcreteFactory, IGUIFactory1
     {
         public IWebFactory GetWebGui()
