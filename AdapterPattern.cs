@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
-
+/*
+Bridge is usually designed up-front, letting you develop parts of an application 
+independently of each other. On the other hand, Adapter is commonly used with an 
+existing app to make some otherwise-incompatible classes work together nicely.
+*/
 namespace AdapterPattern
 {
     public class EmployeeModel
