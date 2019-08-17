@@ -8,31 +8,39 @@ namespace StratergyPattern
 {
     public abstract class SortStratergy
     {
-        public abstract void Sort(ref List<string> list);
+        public abstract void Sort(List<string> list);
+        public void Display(List<string> names)
+        {
+            foreach (var name in names)
+                System.Console.WriteLine(name);
+        }
     }
     public class QuickSort : SortStratergy
     {
-        public override void Sort(ref List<string> list)
+        public override void Sort(List<string> list)
         {
             System.Console.WriteLine("---------------QuickSort-----------------");
             list.Sort();
+            Display(list);
         }
     }
     public class ShellSort : SortStratergy
     {
-        public override void Sort(ref List<string> list)
+        public override void Sort(List<string> list)
         {
             System.Console.WriteLine("---------------ShellSort------------------");
             list.Sort();
+            Display(list);
         }
     }
 
     public class MergeSort : SortStratergy
     {
-        public override void Sort(ref List<string> list)
+        public override void Sort(List<string> list)
         {
             System.Console.WriteLine("---------------MergeSort-------------------");
             list.Sort();
+            Display(list);
         }
     }
 
@@ -57,13 +65,9 @@ namespace StratergyPattern
         }
         public void Sort()
         {
-            this.stratergy.Sort(ref this.names);
+            this.stratergy.Sort(this.names);
         }
-        public void Display()
-        {
-            foreach (var name in names)
-                System.Console.WriteLine(name);
-        }
+        
     }
     public class Program
     {
@@ -71,11 +75,9 @@ namespace StratergyPattern
         {
             SortedList list = new SortedList(new QuickSort());
             list.Sort();
-            list.Display();
 
             SortedList list1 = new SortedList(new MergeSort());
             list1.Sort();
-            list1.Display();
         }
     }
 }
