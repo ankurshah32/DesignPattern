@@ -18,8 +18,8 @@ namespace IteratorOne
     public class Candidate
     {
         public string name { get; set; }
-        public ObjectState CurrentState { get; set; }
-        public StateContext context { get; set; }
+        public ObjectState CurrentState { get; }
+        public StateContext context { get; private set; }
         public Candidate(string name)
         {
             this.name = name;
