@@ -1,5 +1,6 @@
 /*
 Dependency injection using Unity framework.
+Demo shows property Injection as well constructor injection
  */
  using System;
 using Unity;
